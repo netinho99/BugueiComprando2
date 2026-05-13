@@ -1,1 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BugueiComprando | Curadoria de Ofertas</title>
+  
+  <meta name="description" content="Nossa equipe garimpa as melhores ofertas reais em tecnologia, trabalho e dia a dia. Compras inteligentes testadas e aprovadas.">
+  <meta name="robots" content="index, follow">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+  <header class="header">
+    <div class="header-container">
+      <a href="#" class="logo">
+        Buguei<span>Comprando</span>
+      </a>
+  
+      <div class="search-bar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <input type="text" id="search" placeholder="Qual produto você procura?" oninput="buscarProduto(this.value)">
+      </div>
+
+      <nav class="nav-filters" id="nav-filters">
+        <button class="active" onclick="filtrar('todos', this)">Todas as Ofertas</button>
+        <button onclick="filtrar('Dia a Dia', this)">Dia a Dia</button>
+        <button onclick="filtrar('Tecnologia', this)">Tecnologia</button>
+        <button onclick="filtrar('Viagem', this)">Viagem</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="page-header">
+      <h1>Achados da Semana</h1>
+      <p>Nossa seleção manual das melhores oportunidades na Amazon hoje.</p>
+    </div>
+
+    <div id="products" class="products-grid">
+      <!-- Produtos renderizados via JS -->
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <div class="brand">
+        <h2>Buguei<span>Comprando</span></h2>
+        <p>Curadoria rigorosa de produtos para facilitar a sua vida.</p>
+      </div>
+      <div class="disclaimer">
+        <p><strong>Transparência:</strong> Este site utiliza links de afiliados. Ao comprar através deles, podemos receber uma comissão sem nenhum custo adicional para você.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Modal Galeria -->
+  <div id="modal" class="modal" onclick="fecharModal(event)">
+    <div class="modal-content">
+      <button class="close-modal" onclick="fecharModalForcado()">✕</button>
+      <img id="modalImg" src="" alt="Produto ampliado">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
